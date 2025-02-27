@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Astronomie</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!--===HEADER===-->
+<header>
+    <div class="logo">
+        <!-- Icône Font Awesome d'astrologie -->
+        <i class="fas fa-sun"></i>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#news">News de l'Espace</a></li>
+            <li><a href="#systeme-solaire">Système Solaire</a></li>
+            <li><a href="#reglementation">Réglementation dans l'Espace</a></li>
+            <li><a href="#protection-donnees">Protection des Données dans l'Espace</a></li>
+        </ul>
+    </nav>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+</header>
+
+<script>
+    // Menu Burger
+    function toggleMenu() {
+        const menu = document.querySelector('nav ul');
+        menu.classList.toggle('show');
+    }
+</script>
+
+<!--===HERO===-->
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Explorez les Mystères de l'Espace</h1>
+        <p>Découvrez le système solaire, les dernières nouvelles de l'astronomie et la régulation dans l'espace.</p>
+    </div>
+</section>
+
+<!--=== NEWS ===-->
+<section id="news" class="section_n">
+    <h2>Les News de l'Espace</h2>
+    <p>Restez informé des dernières découvertes et avancées scientifiques concernant l'espace et l'astronomie.</p>
+
+    <!-- Carrousel d'images -->
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="https://via.placeholder.com/800x400" alt="Image espace 1">
+            <img src="https://via.placeholder.com/800x400" alt="Image espace 2">
+            <img src="https://via.placeholder.com/800x400" alt="Image espace 3">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+    <!-- Conteneur des articles -->
+    <div id="news-articles"></div>
+
+    <!-- Lien vers d'autres news -->
+    <a href="https://www.nasa.gov/" class="cta-button" target="_blank">Voir plus d'articles</a>
+</section>
+
+<!--=== SYSTEME SOLAIRE ===-->
+
+<section id="systeme-solaire" class="section_ss">
+    <h2>Le Système Solaire</h2>
+    <p>Explorez chaque planète et leurs caractéristiques fascinantes dans notre système solaire.</p>
+
+    <!-- Planets Section -->
+    <div id="planets" class="section">
+        <div class="planets-container">
+            <!-- Planet: Soleil -->
+            <div class="planet-info">
+                <div class="planet" style="background-image: url('https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001435/GSFC_20171208_Archive_e001435~large.jpg?w=1920&h=1920&fit=clip&crop=faces%2Cfocalpoint.');"></div>
+                <p>Soleil</p>
+                <button class="planet-button" onclick="showDescription('soleil')">Description</button>
+            </div>
+
+            <!-- Planet: Mercure -->
+            <div class="planet-info">
+                <div class="planet" style="background-image: url('https://science.nasa.gov/wp-content/uploads/2024/03/pia15162-mercury-basins-messenger-16x9-1.jpg');"></div>
+                <p>Mercure</p>
+                <button class="planet-button" onclick="showDescription('mercure')">Description</button>
+            </div>
+
+            <!-- Planet: Vénus -->
+            <div class="planet-info">
+                <div class="planet" style="background-image: url('https://science.nasa.gov/wp-content/uploads/2023/05/venus-mariner-10-pia23791-1920x640-1.jpg');"></div>
+                <p>Vénus</p>
+                <button class="planet-button" onclick="showDescription('venus')">Description</button>
+            </div>
+
+            <!-- Planet: Terre -->
+            <div class="planet-info">
+                <div class="planet" style="background-image: url('https://science.nasa.gov/wp-content/uploads/2023/05/earth-1-jpg.webp');"></div>
+                <p>Terre</p>
+                <button class="planet-button" onclick="showDescription('terre')">Description</button>
+            </div>
+
+            <!-- Planet: Mars -->
+            <div class="planet-info">
+                <div class="planet" style="background-image: url('https://science.nasa.gov/wp-content/uploads/2024/03/mars-full-globe-16x9-1.jpg');"></div>
+                <p>Mars</p>
+                <button class="planet-button" onclick="showDescription('mars')">Description</button>
+            </div>
+
+            <!-- Planet: Jupiter -->
+            <div class="planet-info">
+                <div class="planet" style="background-image: url('https://science.nasa.gov/wp-content/uploads/2024/03/jupiter-marble-pia22946-16x9-1.jpg');"></div>
+                <p>Jupiter</p>
+                <button class="planet-button" onclick="showDescription('jupiter')">Description</button>
+            </div>
+
+            <!-- Planet: Saturne -->
+            <div class="planet-info">
+                <div class="planet" style="background-image: url('https://science.nasa.gov/wp-content/uploads/2023/05/saturn-farewell-pia21345-sse-banner-1920x640-1.jpg');"></div>
+                <p>Saturne</p>
+                <button class="planet-button" onclick="showDescription('saturne')">Description</button>
+            </div>
+
+            <!-- Planet: Uranus -->
+            <div class="planet-info">
+                <div class="planet" style="background-image: url('https://science.nasa.gov/wp-content/uploads/2024/03/uranus-pia18182-16x9-1.jpg');"></div>
+                <p>Uranus</p>
+                <button class="planet-button" onclick="showDescription('uranus')">Description</button>
+            </div>
+
+            <!-- Planet: Neptune -->
+            <div class="planet-info">
+                <div class="planet" style="background-image: url('https://science.nasa.gov/wp-content/uploads/2024/03/pia01492-neptune-full-disk-16x9-1.jpg');"></div>
+                <p>Neptune</p>
+                <button class="planet-button" onclick="showDescription('neptune')">Description</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- The Modal -->
+<div id="planetModal" class="modal">
+    <!-- Modal Content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-planet-name">Choisissez une planète</h2>
+        <p id="modal-planet-desc">Cliquez sur un bouton pour obtenir une description de la planète.</p>
+    </div>
+</div>
+
+<section id="reglementation" class="section_r">
+    <h2>Réglementation dans l'Espace</h2>
+    <p>Comprenez les lois et régulations qui gouvernent les activités spatiales internationales.</p>
+
+    <div class="categories">
+        <!-- Droit Français -->
+        <div class="categorie">
+            <h3>Droit Français</h3>
+            <p>En France, les activités spatiales sont régies par le Code de l’Espace, adopté en 2008. Il encadre les opérations spatiales, comme le lancement de satellites et les missions spatiales, tout en garantissant la sécurité et le respect de l'environnement spatial.</p>
+            <ul>
+                <li><strong>Agence Spatiale Française (CNES)</strong> : Supervise les projets spatiaux nationaux.</li>
+                <li><strong>Licence d’exploitation spatiale</strong> : Les entreprises doivent obtenir une licence pour lancer et exploiter des satellites ou des vaisseaux.</li>
+            </ul>
+        </div>
+
+        <!-- Droit Européen -->
+        <div class="categorie">
+            <h3>Droit Européen</h3>
+            <p>Au niveau européen, la régulation spatiale est coordonnée par l'Agence spatiale européenne (ESA). L'ESA met en œuvre des programmes spatiaux, coordonne les lancements et les recherches, et établit des normes de sécurité communes.</p>
+            <ul>
+                <li><strong>Programme Copernicus</strong> : Pour la surveillance de l'environnement terrestre par satellite.</li>
+                <li><strong>Galileo</strong> : Système de navigation par satellite de l'UE.</li>
+            </ul>
+        </div>
+
+        <!-- Droit International -->
+        <div class="categorie">
+            <h3>Droit International</h3>
+            <p>Le droit international de l'espace est régulé par plusieurs traités de l'ONU, dont le Traité sur l'espace de 1967, qui interdit la militarisation de l'espace et garantit que les activités spatiales doivent être menées pour le bénéfice de toute l'humanité.</p>
+            <ul>
+                <li><strong>Traité de l'espace (1967)</strong> : Garantie de l’utilisation pacifique de l’espace.</li>
+                <li><strong>Convention sur la responsabilité des dommages causés par des objets spatiaux (1972)</strong> : Précise la responsabilité des États en cas de dommages causés par des objets spatiaux.</li>
+                <li><strong>Réglementation de la gestion des débris spatiaux</strong> : Prévention de la pollution de l’espace et de la Terre par les débris spatiaux.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="protection-donnees" class="section_pd">
+    <h2>Protection des Données dans l'Espace</h2>
+    <p>Les missions spatiales génèrent et transmettent une quantité massive de données sensibles. La sécurité de ces informations repose sur des protocoles avancés de chiffrement, d'authentification et de détection des intrusions.</p>
+    <ul>
+        <li><strong>Chiffrement des communications :</strong> Les échanges entre satellites et stations terrestres sont protégés par des algorithmes de chiffrement robustes, empêchant toute interception non autorisée.</li>
+        <li><strong>Redondance et intégrité des données :</strong> Les systèmes embarqués intègrent des mécanismes de vérification et de correction d'erreurs pour garantir l'exactitude des informations transmises.</li>
+        <li><strong>Détection et prévention des cyberattaques :</strong> L’analyse comportementale des flux de données permet d’identifier et de contrer toute tentative d’intrusion malveillante.</li>
+        <li><strong>Isolation des systèmes critiques :</strong> Les infrastructures numériques sont compartimentées afin de limiter les risques en cas de compromission d’un module.</li>
+    </ul>
+    <p>Grâce à ces mesures, les données restent sécurisées et fiables, garantissant le bon déroulement des missions spatiales et la protection des informations stratégiques.</p>
+</section>
+
+
+<footer>
+    <p>&copy; 2025 Site Astronomie | Boughrara Soumaiya | Tous droits réservés</p>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>

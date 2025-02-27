@@ -1,0 +1,811 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+/*=== HEADER ===*/
+/* Style général du header */
+header {
+    background: linear-gradient(135deg, #0a192f, #1f4068);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: "Arial", sans-serif;
+}
+
+/* Logo */
+.logo {
+    font-size: 28px;
+    color: #00aaff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo i {
+    font-size: 30px;
+}
+
+/* Effet dynamique sur le logo */
+.logo:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+/* Liens */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Effet au survol */
+nav ul li a:hover {
+    color: #00aaff;
+    transform: scale(1.1);
+}
+
+/* Effet soulignement dynamique */
+nav ul li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #00aaff;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav ul li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Icône menu burger (mobile) */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #00aaff;
+    transition: transform 0.3s ease;
+}
+
+/* Effet menu burger cliqué */
+.menu-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(10, 25, 47, 0.95);
+        width: 250px;
+        box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.3);
+        padding: 10px 0;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+
+
+/*=== Hero Section ===*/
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    background-image: url('Unknown.jpg'); /* L'image comme fond */
+    background-size: cover; /* L'image couvre toute la section */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Ne pas répéter l'image */
+}
+
+/* Contenu de la section Hero */
+.hero-content {
+    position: absolute; /* Positionner le texte au-dessus de l'image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+    padding: 20px;
+    z-index: 2;
+}
+
+/* Bouton CTA */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #ccc;
+}
+
+/*===NEWS====*/
+.section_n {
+    background: linear-gradient(135deg, #0a192f, #1f4068);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: "Arial", sans-serif;
+    max-width: 900px;
+    width: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    margin-left: 250px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-out forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section_n h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #00aaff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Carrousel */
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel img {
+    width: 40%;
+    border-radius: 12px;
+}
+
+/* Boutons du carrousel */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 170, 255, 0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(0, 170, 255, 1);
+}
+
+/* Conteneur des articles */
+#news-articles {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Articles individuels */
+.news-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 280px;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.news-item h3 {
+    color: #00aaff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: #00aaff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.news-item a:hover {
+    color: #0088cc;
+}
+
+.news-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Bouton Voir plus */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #00aaff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background: #0088cc;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .section_n {
+        padding: 20px;
+    }
+    
+    .section_n h2 {
+        font-size: 24px;
+    }
+    
+    .carousel-container {
+        max-width: 100%;
+    }
+
+    #news-articles {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-item {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/*===SYSTEME SOLAIRE ===*/
+.section_ss{
+    margin-top: 50px;
+}
+.section_ss p{
+    color:white;
+    text-align: center;
+}
+.section_ss h2{
+    color:white;
+    text-align: center;
+}
+
+.planets-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.planet-info {
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+}
+
+.planet {
+    width: 100%;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.planet:hover {
+    transform: scale(1.1);
+}
+
+.planet-info p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.planet-button {
+    background-color: #ffdd57;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.planet-button:hover {
+    background-color: #ffaa00;
+}
+
+/* Modale - Popup */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Background with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.planet-button{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #00aaff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    }
+    
+    .planet-button:hover {
+        background: #0088cc;
+        transform: scale(1.05);
+    
+    
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .planets-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .planets-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .planets-container {
+        grid-template-columns: 1fr;
+    }
+
+    .planet {
+        height: 150px;
+    }
+
+    .planet-info p {
+        font-size: 14px;
+    }
+
+    .planet-button {
+        padding: 8px;
+    }
+}
+
+
+/*=== REGLEMENTATION ===*/
+.section_r {
+
+    background: linear-gradient(135deg, #0a192f, #1f4068);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: "Arial", sans-serif;
+    max-width: 1500px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-out forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section_r h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #00aaff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Conteneur des catégories en ligne */
+.categories {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Carte de chaque catégorie */
+.categorie {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    flex: 1;
+    text-align: left;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slideIn 0.6s ease-out forwards;
+    animation-delay: calc(var(--delay, 1) * 0.2s);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Animation des cartes */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Titres des catégories */
+.categorie h3 {
+    font-size: 20px;
+    color: #00aaff;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #00aaff;
+    padding-bottom: 5px;
+}
+
+/* Listes */
+.categorie ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categorie li {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.categorie li::before {
+    content: "⚖️"; /* Icône balance pour la réglementation */
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* Effet au survol */
+.categorie:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.categorie li:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
+.categorie li:hover::before {
+    transform: rotate(20deg);
+}
+
+/* Effet lumineux de fond */
+.section_r::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 170, 255, 0.3);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: floating 6s infinite alternate ease-in-out;
+}
+
+@keyframes floating {
+    to {
+        transform: translateY(30px) translateX(-30px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categorie {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .section_r {
+        padding: 20px;
+    }
+    
+    .section_r h2 {
+        font-size: 24px;
+    }
+    
+    .section_r p,
+    .categorie li {
+        font-size: 14px;
+    }
+}
+
+
+/*=== PROTECTION DES DONNÉES===*/
+.section_pd {
+    background: linear-gradient(135deg, #0a192f, #1f4068);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: "Arial", sans-serif;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-out forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section_pd h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #00aaff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Effet de survol sur les éléments de la liste */
+.section_pd ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section_pd li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateX(-20px);
+    opacity: 0;
+    animation: slideIn 0.6s ease-out forwards;
+    animation-delay: calc(var(--delay, 0) * 0.2s);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.section_pd li::before {
+    content: "🔒"; /* Icône de verrouillage pour le style */
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* Animation des éléments de la liste */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Effet au survol */
+.section_pd li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.section_pd li:hover::before {
+    transform: rotate(20deg);
+}
+
+/* Animation de l'effet de parallaxe sur le fond */
+.section_pd::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 170, 255, 0.3);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: floating 6s infinite alternate ease-in-out;
+}
+
+@keyframes floating {
+    to {
+        transform: translateY(30px) translateX(30px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section_pd {
+        padding: 20px;
+    }
+    
+    .section_pd h2 {
+        font-size: 24px;
+    }
+    
+    .section_pd p,
+    .section_pd li {
+        font-size: 14px;
+    }
+}
+
+
+/* Style général du footer */
+footer {
+    margin-top: 100px;
+    background: linear-gradient(135deg, #1f4068, #00aaff);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Texte du footer */
+footer p {
+    font-size: 14px;
+    margin: 0;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+/* Effet hover sur le texte */
+footer p:hover {
+    color: white;
+    cursor: pointer;
+}

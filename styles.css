@@ -6,7 +6,6 @@ body {
     background-color: black;
 }
 /*=== HEADER ===*/
-/* Style général du header */
 header {
     background: linear-gradient(135deg, #0a192f, #1f4068);
     color: white;
@@ -21,7 +20,7 @@ header {
     font-family: "Arial", sans-serif;
 }
 
-/* Logo */
+
 .logo {
     font-size: 28px;
     color: #00aaff;
@@ -32,12 +31,12 @@ header {
     font-size: 30px;
 }
 
-/* Effet dynamique sur le logo */
+
 .logo:hover {
     transform: scale(1.2) rotate(10deg);
 }
 
-/* Navigation */
+
 nav ul {
     display: flex;
     list-style: none;
@@ -50,7 +49,7 @@ nav ul li {
     position: relative;
 }
 
-/* Liens */
+
 nav ul li a {
     color: white;
     text-decoration: none;
@@ -60,13 +59,13 @@ nav ul li a {
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* Effet au survol */
+
 nav ul li a:hover {
     color: #00aaff;
     transform: scale(1.1);
 }
 
-/* Effet soulignement dynamique */
+
 nav ul li::after {
     content: "";
     position: absolute;
@@ -83,7 +82,7 @@ nav ul li:hover::after {
     left: 0;
 }
 
-/* Icône menu burger (mobile) */
+
 .menu-icon {
     display: none;
     font-size: 30px;
@@ -92,7 +91,7 @@ nav ul li:hover::after {
     transition: transform 0.3s ease;
 }
 
-/* Effet menu burger cliqué */
+
 .menu-icon:hover {
     transform: scale(1.2);
 }
@@ -137,15 +136,15 @@ nav ul li:hover::after {
     text-align: center;
     color: #fff;
     position: relative;
-    background-image: url('Unknown.jpg'); /* L'image comme fond */
-    background-size: cover; /* L'image couvre toute la section */
-    background-position: center; /* Centrer l'image */
-    background-repeat: no-repeat; /* Ne pas répéter l'image */
+    background-image: url('Unknown.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
-/* Contenu de la section Hero */
+
 .hero-content {
-    position: absolute; /* Positionner le texte au-dessus de l'image */
+    position: absolute; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -154,7 +153,7 @@ nav ul li:hover::after {
     z-index: 2;
 }
 
-/* Bouton CTA */
+
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
@@ -209,7 +208,7 @@ nav ul li:hover::after {
     padding-bottom: 5px;
 }
 
-/* Carrousel */
+
 .carousel-container {
     position: relative;
     max-width: 100%;
@@ -233,7 +232,7 @@ nav ul li:hover::after {
     border-radius: 12px;
 }
 
-/* Boutons du carrousel */
+
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -255,7 +254,7 @@ nav ul li:hover::after {
     background: rgba(0, 170, 255, 1);
 }
 
-/* Conteneur des articles */
+
 #news-articles {
     margin-top: 20px;
     display: flex;
@@ -264,7 +263,7 @@ nav ul li:hover::after {
     gap: 20px;
 }
 
-/* Articles individuels */
+
 .news-item {
     background: rgba(255, 255, 255, 0.1);
     padding: 15px;
@@ -303,7 +302,7 @@ nav ul li:hover::after {
     transform: scale(1.05);
 }
 
-/* Bouton Voir plus */
+
 .cta-button {
     display: inline-block;
     margin-top: 20px;
@@ -414,17 +413,17 @@ nav ul li:hover::after {
     background-color: #ffaa00;
 }
 
-/* Modale - Popup */
+
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
-    z-index: 1; /* Sit on top */
+    z-index: 1; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Background with opacity */
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .modal-content {
@@ -470,7 +469,7 @@ nav ul li:hover::after {
     
 }
 
-/* Media Queries */
+/* Responsive */
 @media (max-width: 1200px) {
     .planets-container {
         grid-template-columns: repeat(3, 1fr);
@@ -540,14 +539,14 @@ nav ul li:hover::after {
     padding-bottom: 5px;
 }
 
-/* Conteneur des catégories en ligne */
+
 .categories {
     display: flex;
     justify-content: space-between;
     gap: 20px;
 }
 
-/* Carte de chaque catégorie */
+
 .categorie {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
@@ -569,7 +568,6 @@ nav ul li:hover::after {
     }
 }
 
-/* Titres des catégories */
 .categorie h3 {
     font-size: 20px;
     color: #00aaff;
@@ -578,7 +576,7 @@ nav ul li:hover::after {
     padding-bottom: 5px;
 }
 
-/* Listes */
+
 .categorie ul {
     list-style: none;
     padding: 0;
@@ -597,12 +595,12 @@ nav ul li:hover::after {
 }
 
 .categorie li::before {
-    content: "⚖️"; /* Icône balance pour la réglementation */
+    content: "⚖️"; 
     font-size: 18px;
     transition: transform 0.3s ease;
 }
 
-/* Effet au survol */
+
 .categorie:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.05);
@@ -617,7 +615,7 @@ nav ul li:hover::after {
     transform: rotate(20deg);
 }
 
-/* Effet lumineux de fond */
+
 .section_r::before {
     content: "";
     position: absolute;
@@ -700,7 +698,7 @@ nav ul li:hover::after {
     padding-bottom: 5px;
 }
 
-/* Effet de survol sur les éléments de la liste */
+
 .section_pd ul {
     list-style: none;
     padding: 0;
@@ -723,7 +721,7 @@ nav ul li:hover::after {
 }
 
 .section_pd li::before {
-    content: "🔒"; /* Icône de verrouillage pour le style */
+    content: "🔒"; 
     font-size: 18px;
     transition: transform 0.3s ease;
 }
@@ -736,7 +734,7 @@ nav ul li:hover::after {
     }
 }
 
-/* Effet au survol */
+
 .section_pd li:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.05);
@@ -746,7 +744,7 @@ nav ul li:hover::after {
     transform: rotate(20deg);
 }
 
-/* Animation de l'effet de parallaxe sur le fond */
+
 .section_pd::before {
     content: "";
     position: absolute;
@@ -782,8 +780,7 @@ nav ul li:hover::after {
     }
 }
 
-
-/* Style général du footer */
+/*===FOOTER===*/
 footer {
     margin-top: 100px;
     background: linear-gradient(135deg, #1f4068, #00aaff);
@@ -796,7 +793,6 @@ footer {
     width: 100%;
 }
 
-/* Texte du footer */
 footer p {
     font-size: 14px;
     margin: 0;
@@ -804,7 +800,6 @@ footer p {
     letter-spacing: 1px;
 }
 
-/* Effet hover sur le texte */
 footer p:hover {
     color: white;
     cursor: pointer;

@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,7 +10,6 @@ body {
     box-sizing: border-box;
     background-color: black;
     overflow-x: hidden;
-    width: 100%;
 }
 /*=== HEADER ===*/
 header {
@@ -41,9 +45,10 @@ header {
 
 
 nav ul {
+
     display: flex;
     list-style: none;
-    margin: 0;
+    margin-right: 25px;
     padding: 0;
 }
 
@@ -148,6 +153,7 @@ nav ul li:hover::after {
 
 
 .hero-content {
+    width: 100%;
     position: absolute; 
     top: 50%;
     left: 50%;
@@ -593,6 +599,31 @@ nav ul li:hover::after {
         padding: 8px;
     }
 }
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;  /* Largeur ajustable pour mobile */
+    max-width: 400px; /* Largeur max sur grand écran */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Toujours au-dessus */
+}
+
+/* S'assurer qu'il s'adapte sur mobile */
+@media (max-width: 600px) {
+    .popup {
+        position: fixed;
+    top: 50%;
+    left: 50%;
+        width: 80%; /* Plus petit sur mobile */
+        padding: 15px;
+    }
+}
+
 
 
 /*=== REGLEMENTATION ===*/

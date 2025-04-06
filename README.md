@@ -25,11 +25,7 @@ L'objectif principal de ce projet est de rendre l'astronomie accessible à un la
 
 ## Technologies utilisées
 
-| Technologie       | Utilisation                              |
-|-------------------|------------------------------------------|
-| HTML / CSS        | Structure, mise en page et style         |
-| JavaScript        | Dynamisme et gestion de l'interactivité  |
-| APIs externes     | Récupération des données astronomiques   |
+HTML, CSS, JavaScript et APIs externes     
 
 ## Créatrice
 

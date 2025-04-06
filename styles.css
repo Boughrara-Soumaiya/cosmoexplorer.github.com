@@ -145,7 +145,7 @@ nav ul li:hover::after {
     text-align: center;
     color: #fff;
     position: relative;
-    background-image: url('Unknown.jpg'); 
+    background-image: url('image/Unknown.jpg'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 

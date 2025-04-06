@@ -30,8 +30,8 @@ Le projet a été conçu pour mettre en valeur mes compétences en développemen
 | JavaScript        | Dynamisme et gestion de l'interactivité |
 | APIs externes     | Récupération des données astronomiques |
 
-## À propos
+## Auteur
 
-Ce projet a été entièrement développé par moi-même dans le cadre de l'auto-apprentissage et de la pratique des technologies web. Il reflète mon intérêt pour l'astronomie et mon engagement à créer des expériences interactives et engageantes.
+Ce projet a été entièrement développé par moi-même dans le cadre de l'auto-apprentissage et de la pratique des technologies web. Il reflète mon intérêt pour l'astronomie, la réglementation qui en découle ainsi que mon engagement à créer des expériences interactives et engageantes.
 
 Le site est conçu pour être une vitrine de mes compétences en développement web, en particulier dans le domaine de la visualisation de données et de la création d'interfaces utilisateurs riches.
